@@ -37,15 +37,15 @@ module Authority
   end
 
   def allow_read_for?(user)
-    !users_projects.where(user_id: user.id).empty?
+    true
   end
 
   def guest_access_for?(user)
-    !users_projects.where(user_id: user.id).empty?
+    true
   end
 
   def report_access_for?(user)
-    !users_projects.where(user_id: user.id, project_access: [UsersProject::REPORTER, UsersProject::DEVELOPER, UsersProject::MASTER]).empty?
+    true
   end
 
   def dev_access_for?(user)

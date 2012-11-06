@@ -54,7 +54,8 @@ class GroupsController < ApplicationController
   end
 
   def projects
-    @projects ||= current_user.projects_with_events.where(group_id: @group.id)
+    #@projects ||= current_user.projects_with_events.where(group_id: @group.id)
+    @projects ||= Project.where(group_id: @group.id)
   end
 
   def project_ids
